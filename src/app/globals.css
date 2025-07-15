@@ -13,19 +13,6 @@
   --text-sub: #888;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #232B3A; /* 다크모드용 진한 블루 */
-    --foreground: #F8F6F0;
-    --card-bg: #232323;
-    --card-border: #444;
-    --card-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
-    --button-bg: #4F8CFF;
-    --button-text: #fff;
-    --text-sub: #bbb;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);

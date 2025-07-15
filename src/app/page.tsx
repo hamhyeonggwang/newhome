@@ -10,8 +10,8 @@ export default function Home() {
             R.OTi Lab
           </h1>
         </div>
-        <p className="text-3xl sm:text-4xl font-bold text-[#B0B3B8] mt-2 drop-shadow">빛나는 작업치료사의 지식연구소</p>
-        <p className="text-xl sm:text-2xl text-[var(--text-sub)] mt-4 font-semibold leading-relaxed text-center max-w-2xl">IT와 작업치료의 만남, 교육과 커뮤니티를 한 곳에.<br/>전문성과 따뜻함을 모두 담은 공간입니다.</p>
+        <p className="text-3xl sm:text-4xl font-bold text-[#B0B3B8] mt-2 drop-shadow">빛나는 작업치료사의 <br/> 신나는 지식연구소</p>
+        <p className="text-xl sm:text-2xl text-[var(--text-sub)] mt-4 font-semibold leading-relaxed text-center max-w-2xl">IT와 작업치료의 만남, 교육과 커뮤니티 <br/>전문성과 따뜻함을 모두 담은 공간</p>
       </section>
 
       {/* Apps & Community Section */}
@@ -49,18 +49,18 @@ export default function Home() {
         <h2 className="text-4xl font-extrabold mb-2 text-[#B0B3B8] tracking-tight">웹게임</h2>
         <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6">
           {/* 첫 번째 웹게임: Memory */}
-          <a href="https://memory-blond-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-white rounded-2xl dark:bg-[#232323] flex flex-col items-center justify-center shadow border border-[var(--card-border)] dark:border-[#444] hover:shadow-blue-200 hover:scale-105 transition group">
+          <a href="https://memory-blond-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-white rounded-2xl flex flex-col items-center justify-center shadow border border-[var(--card-border)] hover:shadow-blue-200 hover:scale-105 transition group">
             <img src="/memory-thumb.png" alt="Memory Game" className="w-2/3 h-2/3 object-contain mb-2 rounded-xl shadow group-hover:shadow-lg" />
-            <span className="text-[#232323] dark:text-[#F4F9FF] font-bold text-base mt-1">Memory 게임</span>
+            <span className="text-[#232323] font-bold text-base mt-1">Memory 게임</span>
           </a>
           {/* 두 번째 웹게임: Stroop */}
-          <a href="https://stroop-pi.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-white rounded-2xl dark:bg-[#232323] flex flex-col items-center justify-center shadow border border-[var(--card-border)] dark:border-[#444] hover:shadow-blue-200 hover:scale-105 transition group">
+          <a href="https://stroop-pi.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-white rounded-2xl flex flex-col items-center justify-center shadow border border-[var(--card-border)] hover:shadow-blue-200 hover:scale-105 transition group">
             <img src="/Stroop.png" alt="Stroop Game" className="w-2/3 h-2/3 object-contain mb-2 rounded-xl shadow group-hover:shadow-lg" />
-            <span className="text-[#232323] dark:text-[#F4F9FF] font-bold text-base mt-1">Stroop 게임</span>
+            <span className="text-[#232323] font-bold text-base mt-1">Stroop 게임</span>
           </a>
           {/* 나머지 18개: Coming Soon */}
           {Array.from({ length: 18 }).map((_, i) => (
-            <div key={i} className="aspect-square bg-white/80 dark:bg-[#232323]/80 backdrop-blur-md rounded-2xl flex items-center justify-center shadow border border-[var(--card-border)] dark:border-[#444] opacity-60 text-[#B0B3B8] dark:text-[#F4F9FF] font-extrabold text-lg animate-pulse">
+            <div key={i} className="aspect-square bg-white/80 backdrop-blur-md rounded-2xl flex items-center justify-center shadow border border-[var(--card-border)] opacity-60 text-[#B0B3B8] font-extrabold text-lg animate-pulse">
               Coming Soon
             </div>
           ))}
@@ -70,10 +70,10 @@ export default function Home() {
       {/* About Section */}
       <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-20 bg-[var(--background)]">
         <h2 className="text-4xl font-extrabold mb-2 text-[#B0B3B8] tracking-tight">About</h2>
-        <div className="h-40 w-full bg-white/80 dark:bg-[#232323]/80 backdrop-blur-md rounded-3xl flex items-center justify-center text-2xl font-bold text-[var(--text-sub)] dark:text-[#F4F9FF] border border-[var(--card-border)] dark:border-[#444] shadow-xl p-8 text-center">
-          <span className="text-xl font-semibold text-[#232323] dark:text-[#F4F9FF]">
-            R.OTi Lab은 작업치료와 IT, AI의 융합을 실험하는 지식연구소입니다.<br/>
-            AI 기반 웹게임 개발과, 작업치료사 실무에 도움이 되는 AI 활용법을<br/>
+        <div className="h-40 w-full bg-white/80 backdrop-blur-md rounded-3xl flex items-center justify-center text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-8 text-center">
+          <span className="text-xl font-semibold text-[#232323]">
+            R.OTi Lab은 <br/>
+            누구나 이용할 수 있는 교육용 웹앱과 웹게임 개발, <br/> 작업치료사 실무에 도움이 되는 AI 활용법을<br/>
             함께 연구하고 자유롭게 나누는 커뮤니티를 지향합니다.
           </span>
         </div>
@@ -82,18 +82,18 @@ export default function Home() {
       {/* Contact Section */}
       <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-12 mb-32 bg-[var(--background)]">
         <h2 className="text-4xl font-extrabold mb-2 text-[#B0B3B8] tracking-tight">Contact</h2>
-        <div className="h-24 w-full bg-white/80 dark:bg-[#232323]/80 backdrop-blur-md rounded-3xl flex flex-col items-center justify-center gap-2 text-2xl font-bold text-[var(--text-sub)] dark:text-[#F4F9FF] border border-[var(--card-border)] dark:border-[#444] shadow-xl p-6">
-          <div className="flex items-center gap-3 text-lg font-semibold text-[#232323] dark:text-[#F4F9FF]">
-            <a href="mailto:h2g0614@gmail.com" className="underline hover:text-blue-500 dark:hover:text-blue-300">h2g0614@gmail.com</a>
+        <div className="h-24 w-full bg-white/80 backdrop-blur-md rounded-3xl flex flex-col items-center justify-center gap-2 text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-6">
+          <div className="flex items-center gap-3 text-lg font-semibold text-[#232323]">
+            <a href="mailto:h2g0614@gmail.com" className="underline hover:text-blue-500">h2g0614@gmail.com</a>
           </div>
-          <div className="flex items-center gap-3 text-lg font-semibold text-[#232323] dark:text-[#F4F9FF]">
-            <a href="https://instagram.com/starlight_daddy" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500 dark:hover:text-blue-300">@starlight_daddy</a>
+          <div className="flex items-center gap-3 text-lg font-semibold text-[#232323]">
+            <a href="https://instagram.com/starlight_daddy" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">@starlight_daddy</a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="w-full py-6 text-center text-sm text-[#888] dark:text-[#bbb] bg-transparent select-none">
+      <footer className="w-full py-6 text-center text-sm text-[#888] bg-transparent select-none">
         © 2024 R.OTi Lab. All rights reserved.
       </footer>
     </main>
