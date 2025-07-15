@@ -53,8 +53,13 @@ export default function Home() {
             <img src="/memory-thumb.png" alt="Memory Game" className="w-2/3 h-2/3 object-contain mb-2 rounded-xl shadow group-hover:shadow-lg" />
             <span className="text-[#232323] dark:text-[#F4F9FF] font-bold text-base mt-1">Memory 게임</span>
           </a>
-          {/* 나머지 19개: Coming Soon */}
-          {Array.from({ length: 19 }).map((_, i) => (
+          {/* 두 번째 웹게임: Stroop */}
+          <a href="https://stroop-pi.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-white rounded-2xl dark:bg-[#232323] flex flex-col items-center justify-center shadow border border-[var(--card-border)] dark:border-[#444] hover:shadow-blue-200 hover:scale-105 transition group">
+            <img src="/Stroop.png" alt="Stroop Game" className="w-2/3 h-2/3 object-contain mb-2 rounded-xl shadow group-hover:shadow-lg" />
+            <span className="text-[#232323] dark:text-[#F4F9FF] font-bold text-base mt-1">Stroop 게임</span>
+          </a>
+          {/* 나머지 18개: Coming Soon */}
+          {Array.from({ length: 18 }).map((_, i) => (
             <div key={i} className="aspect-square bg-white/80 dark:bg-[#232323]/80 backdrop-blur-md rounded-2xl flex items-center justify-center shadow border border-[var(--card-border)] dark:border-[#444] opacity-60 text-[#B0B3B8] dark:text-[#F4F9FF] font-extrabold text-lg animate-pulse">
               Coming Soon
             </div>
