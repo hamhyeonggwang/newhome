@@ -10,7 +10,7 @@ export default function Home() {
             R.OTi Lab
           </h1>
         </div>
-        <p className="text-3xl sm:text-4xl font-bold text-[#B0B3B8] mt-2 drop-shadow"> 빛.나는 작업치료사의 <br/> 신.나는 지식연구소</p>
+        <p className="text-3xl sm:text-4xl font-bold text-[#B0B3B8] mt-2 drop-shadow"> 빛나는 치료사의 <br/>  신나는 지식연구소</p>
         <p className="text-xl sm:text-2xl text-[var(--text-sub)] mt-4 font-semibold leading-relaxed text-center max-w-2xl">IT와 작업치료의 만남, 교육과 커뮤니티 <br/>전문성과 따뜻함을 모두 담은 공간</p>
       </section>
 
@@ -69,10 +69,10 @@ export default function Home() {
 
       {/* About Section */}
       <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-20 bg-[var(--background)]">
-        <h2 className="text-4xl font-extrabold mb-2 text-[#B0B3B8] tracking-tight">About</h2>
+        <h2 className="text-4xl font-extrabold mb-2 text-[#B0B3B8] tracking-tight">R.OTi Lab</h2>
         <div className="h-40 w-full bg-white/80 backdrop-blur-md rounded-3xl flex items-center justify-center text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-8 text-center">
           <span className="text-xl font-semibold text-[#232323]">
-            R.OTi Lab은 <br/>
+            <br/>
             누구나 이용할 수 있는 교육용 웹앱과 웹게임 개발, <br/> 작업치료사 실무에 도움이 되는 AI 활용법을<br/>
             함께 연구하고 자유롭게 나누는 커뮤니티를 지향합니다.
           </span>
