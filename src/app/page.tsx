@@ -94,7 +94,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full py-6 text-center text-sm text-[#888] bg-transparent select-none">
-        © 2024 R.OTi Lab. All rights reserved.
+        © 2025 R.OTi Lab . All rights reserved.  대표 함형광
       </footer>
     </main>
   );
