@@ -25,7 +25,7 @@ export default function Home() {
 
       {/* Apps & Community Section */}
       <section className="w-full max-w-6xl flex flex-col items-center gap-14 bg-[var(--background)]">
-        <h2 className="text-4xl font-extrabold mb-6 tracking-tight text-[var(--foreground)]">교육용 웹앱</h2>
+        <h2 className="text-4xl font-extrabold mb-6 tracking-tight text-[var(--card-bg)]">교육용 웹앱</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-14 w-full">
           {/* 키오스크 훈련(아동용) */}
           <div className="relative bg-[var(--card-bg)]/80 backdrop-blur-md rounded-t-3xl rounded-b-xl flex flex-col items-center justify-between p-10 min-h-64 shadow-2xl border border-[var(--card-border)] transition hover:shadow-blue-200 hover:scale-105 duration-200">
@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* 웹게임 섹션 */}
       <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-20 bg-[var(--background)]">
-        <h2 className="text-4xl font-extrabold mb-2 text-[var(--foreground)] tracking-tight">웹게임</h2>
+        <h2 className="text-4xl font-extrabold mb-2 text-[var(--card-bg)] tracking-tight">웹게임</h2>
         <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6">
           {/* 첫 번째 웹게임: Memory */}
           <a href="https://memory-blond-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-[var(--card-bg)] rounded-2xl flex flex-col items-center justify-center shadow border border-[var(--card-border)] hover:shadow-blue-200 hover:scale-105 transition group">
@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-20 bg-[var(--background)]">
-        <h2 className="text-4xl font-extrabold mb-2 text-[var(--foreground)] tracking-tight">R.OTi Lab</h2>
+        <h2 className="text-4xl font-extrabold mb-2 text-[var(--card-bg)] tracking-tight">R.OTi Lab</h2>
         <div className="h-40 w-full bg-[var(--card-bg)]/80 backdrop-blur-md rounded-3xl flex items-center justify-center text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-8 text-center">
           <span className="text-xl font-semibold text-[var(--foreground)]">
             <br/>
@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-12 mb-32 bg-[var(--background)]">
-        <h2 className="text-4xl font-extrabold mb-2 text-[var(--foreground)] tracking-tight">Contact</h2>
+        <h2 className="text-4xl font-extrabold mb-2 text-[var(--card-bg)] tracking-tight">Contact</h2>
         <div className="h-24 w-full bg-[var(--card-bg)]/80 backdrop-blur-md rounded-3xl flex flex-col items-center justify-center gap-2 text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-6">
           <div className="flex items-center gap-3 text-lg font-semibold text-[var(--foreground)]">
             <a href="mailto:h2g0614@gmail.com" className="underline hover:text-blue-500">h2g0614@gmail.com</a>
