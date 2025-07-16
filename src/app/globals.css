@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F4F9FF; /* 더 밝은 푸른색 */
+  --background: #60A5FA; /* 더 밝은 푸른색 */
   --foreground: #232323; /* 진한 그레이 */
   --primary: #4F8CFF;    /* 포인트 블루 */
   --card-bg: #FFFFFF;    /* 카드용 화이트 */
