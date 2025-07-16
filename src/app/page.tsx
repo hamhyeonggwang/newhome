@@ -9,9 +9,13 @@ export default function Home() {
         <div className="absolute right-[-20%] top-[-20%] w-[80%] h-[80%] bg-[var(--background)] rounded-full opacity-90"></div>
         
         <div className="relative z-10 flex flex-col items-start max-w-6xl w-full">
-          <h1 className="font-extrabold text-6xl sm:text-10xl text-[var(--foreground)] mb-6 tracking-tight">
-            Rehabilitation + OT + Innovation
-          </h1>
+          {/* 메인 제목 뒤의 반투명 동그라미 배경 */}
+          <div className="relative">
+            <div className="absolute -left-8 -top-4 w-32 h-32 bg-[var(--background)] rounded-full opacity-60"></div>
+            <h1 className="font-extrabold text-6xl sm:text-10xl text-[var(--foreground)] mb-6 tracking-tight relative z-10">
+              Rehabilitation + OT + Innovation
+            </h1>
+          </div>
           <div className="font-semibold text-2xl sm:text-4xl text-gray-600 mb-6 bg-gradient-to-r from-gray-100 to-blue-50 px-4 py-2 rounded">
             빛나는 작업치료사의 지식 실험실
           </div>
