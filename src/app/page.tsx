@@ -4,19 +4,33 @@ export default function Home() {
   return (
     <main className="bg-[var(--background)] min-h-screen text-[var(--foreground)] font-sans flex flex-col items-center px-4 gap-32">
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center py-32 bg-white rounded-3xl shadow mb-10">
-        <img src="/roti-logo.png" alt="R.OTi Lab Logo" className="w-28 h-28 mb-8" />
-        <div className="flex flex-col items-start max-w-2xl w-full px-4">
-          <h1 className="text-5xl sm:text-7xl font-extrabold text-[#36454F] mb-2 text-left leading-tight">
-            Rehabilitation + OT + Innovation
-          </h1>
-          <p className="text-3xl sm:text-4xl font-semibold text-[#4F8CFF] mb-2 text-left leading-tight">
-            빛나는 작업치료사의 지식 실험실
-          </p>
-          <p className="text-2xl sm:text-3xl font-bold text-[#232323] text-left leading-tight">
-            R.OTi Lab
-          </p>
-        </div>
+      <section className="w-full flex flex-col items-center justify-center py-32 px-4 bg-white font-sans">
+        <p className="text-xl sm:text-2xl font-light text-gray-400 mb-4 tracking-wide">
+          Rehabilitation + OT + Innovation
+        </p>
+        <h1 className="text-5xl sm:text-7xl text-gray-900 text-center leading-tight mb-6">
+          {
+            [..."빛나는 작업치료사의 지식 실험실"].map((char, i) => {
+              const weights = [
+                "font-light",
+                "font-normal",
+                "font-medium",
+                "font-semibold",
+                "font-bold",
+                "font-extrabold"
+              ];
+              const weight = weights[Math.min(i, weights.length - 1)];
+              return (
+                <span key={i} className={weight}>
+                  {char}
+                </span>
+              );
+            })
+          }
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-500 font-medium text-center max-w-xl">
+          R.OTi Lab
+        </p>
       </section>
 
       {/* Apps & Community Section */}
