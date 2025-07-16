@@ -4,52 +4,17 @@ export default function Home() {
   return (
     <main className="bg-[var(--background)] min-h-screen text-[var(--foreground)] font-sans flex flex-col items-center px-4 gap-32">
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center py-32 px-4 bg-white rounded-3xl shadow mb-10 font-sans">
-        <p className="text-xl sm:text-2xl font-light text-gray-400 mb-4 tracking-wide max-w-2xl text-center">
+      <section className="w-full flex flex-col items-start justify-center py-32 px-6 bg-white rounded-3xl shadow mb-10 font-sans max-w-3xl mx-auto">
+        <h1 className="font-extrabold text-3xl sm:text-5xl text-[#232323] mb-3 tracking-tight">
           Rehabilitation + OT + Innovation
-        </p>
-        <h1 className="text-3xl sm:text-4xl text-gray-900 text-center leading-tight mb-4 max-w-2xl mx-auto">
-          {
-            [..."빛나는 작업치료사의 지식 실험실"].map((char, i) => {
-              const weights = [
-                "font-light",
-                "font-normal",
-                "font-medium",
-                "font-semibold",
-                "font-bold",
-                "font-extrabold"
-              ];
-              const weight = weights[Math.min(i, weights.length - 1)];
-              return (
-                <span key={i} className={weight}>
-                  {char}
-                </span>
-              );
-            })
-          }
         </h1>
-        <div className="flex justify-center items-center gap-1 mt-2 max-w-2xl mx-auto">
-          {
-            [..."R.OTi "].map((char, i) => {
-              const weights = [
-                "font-light",
-                "font-normal",
-                "font-medium",
-                "font-semibold",
-                "font-bold",
-                "font-extrabold"
-              ];
-              const weight = weights[Math.min(i, weights.length - 1)];
-              return (
-                <span key={i} className={`text-2xl sm:text-3xl font-sans ${weight} text-[#4F8CFF]`}>
-                  {char}
-                </span>
-              );
-            })
-          }
-          <span className="text-2xl sm:text-3xl font-sans font-extrabold text-[#232323] tracking-widest ml-1">
-            LAB
-          </span>
+        <div className="font-semibold text-xl sm:text-2xl text-gray-600 mb-3 bg-gradient-to-r from-gray-100 to-blue-50 px-2 py-1 rounded">
+          빛나는 작업치료사의 지식 실험실
+        </div>
+        <div className="flex gap-2 items-center font-bold text-xl sm:text-2xl mt-2">
+          <span className="text-[#B3D8FF]">R.</span>
+          <span className="text-[#4F8CFF]">OTi</span>
+          <span className="text-[#232323] font-extrabold tracking-widest">LAB</span>
         </div>
       </section>
 
