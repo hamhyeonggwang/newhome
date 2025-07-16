@@ -10,7 +10,9 @@ export default function Home() {
           <div className="absolute -left-12 -top-8 w-80 h-80 bg-[var(--background)] rounded-full opacity-60"></div>
           <h1 className="font-extrabold text-6xl sm:text-10xl tracking-tight relative z-10">
             <span className="text-[var(--card-bg)]">Re</span>
-            <span className="text-[var(--card-bg)]">habilitation + OT + Innovation</span>
+            <span className="text-[var(--card-bg)]">habilitation + </span>
+            <span className="text-white">OT</span>
+            <span className="text-[var(--card-bg)]"> + Innovation</span>
           </h1>
         </div>
         <p className="text-3xl sm:text-4xl font-bold text-[#B0B3B8] mt-2 drop-shadow">작업치료사의 지식실험실</p>
