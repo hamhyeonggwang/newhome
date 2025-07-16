@@ -11,7 +11,7 @@ export default function Home() {
             Rehabilitation + OT + Innovation
           </h1>
           <p className="text-3xl sm:text-4xl font-semibold text-[#4F8CFF] mb-2 text-left leading-tight">
-            Radiant OT meets AI
+            빛나는 작업치료사의 지식 실험실
           </p>
           <p className="text-2xl sm:text-3xl font-bold text-[#232323] text-left leading-tight">
             R.OTi Lab
