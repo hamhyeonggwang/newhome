@@ -7,11 +7,21 @@ export default function Home() {
       <section className="w-full flex flex-col items-center justify-center gap-6 py-32 bg-gradient-to-br from-blue-100 via-white to-blue-50 rounded-3xl shadow-xl mb-10 animate-fadein">
         <div className="bg-blue-300/80 rounded-2xl px-10 py-4 shadow-2xl">
           <h1 className="text-6xl sm:text-8xl font-extrabold tracking-tight drop-shadow-[0_4px_24px_rgba(80,80,80,0.18)] text-[#F8F6F0]">
-            R.OTi Lab
+            Rehabilitation + OT + Innovation
           </h1>
         </div>
-        <p className="text-3xl sm:text-4xl font-bold text-[#36454F] mt-2 drop-shadow"> 빛나는 치료사의 <br/> 지 식 연 구 소</p>
-        <p className="text-xl sm:text-2xl text-[var(--text-sub)] mt-4 font-semibold leading-relaxed text-center max-w-2xl">IT와 작업치료의 만남, 교육과 커뮤니티 <br/>전문성과 따뜻함을 모두 담은 공간</p>
+
+        <p className="text-3xl sm:text-4xl font-bold text-[#36454F] mt-2 drop-shadow text-center leading-snug">
+          Rehabilitation meets Innovation
+        </p>
+        <p className="text-2xl sm:text-3xl font-extrabold text-[#4F8CFF] mt-1 drop-shadow">
+          Radiant OT meets AI
+        </p>
+        <p className="text-xl sm:text-2xl text-[var(--text-sub)] mt-4 font-semibold leading-relaxed text-center max-w-2xl">
+          <span className="font-bold text-[#232323]">R.OTi Lab</span><br/>
+          생각이 모이고, 실천으로 이어지는<br/>
+          작업치료사의 지식 실험실
+        </p>
       </section>
 
       {/* Apps & Community Section */}
