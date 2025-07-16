@@ -10,8 +10,7 @@ export default function Home() {
             R.OTi Lab
           </h1>
         </div>
-        <p className="text-3xl sm:text-4xl font-bold text-[#36454F] mt-2 drop-shadow text-center">
-  <span className="pl-8 inline-block"> 빛나는 치료사의 <br/>  신나는 지식연구소</p>
+        <p className="text-3xl sm:text-4xl font-bold text-[#36454F] mt-2 drop-shadow"> 빛나는 치료사의 <br/>  신나는 지식연구소</p>
         <p className="text-xl sm:text-2xl text-[var(--text-sub)] mt-4 font-semibold leading-relaxed text-center max-w-2xl">IT와 작업치료의 만남, 교육과 커뮤니티 <br/>전문성과 따뜻함을 모두 담은 공간</p>
       </section>
 
