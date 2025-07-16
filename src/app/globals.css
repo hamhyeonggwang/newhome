@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #93C5FD; /* 더 밝은 푸른색 */
-  --foreground: #232323; /* 진한 그레이 */
+  --background: #2C3E50; /* 메탈 느낌의 차가운 회색 */
+  --foreground: #36454F; /* 차콜블랙 */
   --primary: #4F8CFF;    /* 포인트 블루 */
-  --card-bg: #FFFFFF;    /* 카드용 화이트 */
-  --card-border: #F0F0F0;
+  --card-bg: #F5F5DC;    /* 아이보리 */
+  --card-border: #E8E8E8;
   --card-shadow: 0 4px 24px 0 rgba(80, 80, 80, 0.06);
   --button-bg: var(--primary);
   --button-text: #fff;
