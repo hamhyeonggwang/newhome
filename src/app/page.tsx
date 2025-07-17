@@ -4,22 +4,18 @@ export default function Home() {
   return (
     <main className="bg-[var(--background)] min-h-screen text-[var(--foreground)] font-sans flex flex-col items-center px-4 gap-32">
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center py-32 px-6 bg-[var(--card-bg)] rounded-3xl shadow mb-10 font-sans relative overflow-hidden">
-        {/* 큰 동그라미 배경 */}
-        <div className="absolute right-[-20%] top-[-20%] w-[80%] h-[80%] bg-[var(--background)] rounded-full opacity-90"></div>
-        
-        <div className="relative z-10 flex flex-col items-start max-w-6xl w-full">
-          {/* 메인 제목 뒤의 반투명 동그라미 배경 */}
-          <div className="relative">
-            <div className="absolute -left-8 -top-4 w-32 h-32 bg-[var(--background)] rounded-full opacity-60"></div>
-            <h1 className="font-extrabold text-6xl sm:text-10xl text-[var(--foreground)] mb-6 tracking-tight relative z-10">
-              Rehabilitation + OT + Innovation
-            </h1>
-          </div>
-          <div className="font-semibold text-2xl sm:text-4xl text-gray-600 mb-6 bg-gradient-to-r from-gray-100 to-blue-50 px-4 py-2 rounded">
+      <section className="w-full flex flex-col items-center justify-center py-32 px-6 bg-[var(--card-bg)] rounded-3xl shadow-xl mb-10 font-sans relative overflow-hidden">
+        {/* 상단/좌측, 우측 메탈 반원 장식 */}
+        <div className="absolute left-[-80px] top-[-80px] w-64 h-64 bg-[#495867] rounded-full opacity-80 z-0"></div>
+        <div className="absolute right-[-120px] top-[-120px] w-[400px] h-[400px] bg-[#495867] rounded-full opacity-80 z-0"></div>
+        <div className="relative z-10 flex flex-col items-start max-w-5xl w-full">
+          <h1 className="font-extrabold text-5xl sm:text-7xl text-[var(--foreground)] mb-6 tracking-tight">
+            Rehabilitation + OT + Innovation
+          </h1>
+          <div className="font-semibold text-2xl sm:text-3xl text-[var(--text-sub)] mb-6 bg-[#F2F4F8] px-4 py-2 rounded">
             빛나는 작업치료사의 지식 실험실
           </div>
-          <div className="flex gap-4 items-center font-bold text-2xl sm:text-4xl mt-4">
+          <div className="flex gap-2 items-center font-bold text-2xl sm:text-3xl mt-2">
             <span className="text-[#B3D8FF]">R.</span>
             <span className="text-[#4F8CFF]">OTi</span>
             <span className="text-[var(--foreground)] font-extrabold tracking-widest">LAB</span>
@@ -32,7 +28,7 @@ export default function Home() {
         <h2 className="text-4xl font-extrabold mb-6 tracking-tight text-[var(--card-bg)]">교육용 웹앱</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-14 w-full">
           {/* 키오스크 훈련(아동용) */}
-          <div className="relative bg-[var(--card-bg)]/80 backdrop-blur-md rounded-t-3xl rounded-b-xl flex flex-col items-center justify-between p-10 min-h-64 shadow-2xl border border-[var(--card-border)] transition hover:shadow-blue-200 hover:scale-105 duration-200">
+          <div className="relative bg-[var(--card-bg)]/90 backdrop-blur-md rounded-t-3xl rounded-b-xl flex flex-col items-center justify-between p-10 min-h-64 shadow-2xl border border-[var(--card-border)] transition hover:shadow-blue-200 hover:scale-105 duration-200">
             {/* 상단 동그라미 */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#B0B3B8] rounded-full shadow"></div>
             <h3 className="text-2xl font-extrabold text-[var(--foreground)] mb-3 mt-4">키오스크 훈련(아동용)</h3>
@@ -40,7 +36,7 @@ export default function Home() {
             <a href="https://order-one-rho.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto px-6 py-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500 text-white font-bold shadow hover:opacity-90 hover:shadow-blue-200 transition text-lg">바로가기</a>
           </div>
           {/* 키오스크 훈련(심화) */}
-          <div className="relative bg-[var(--card-bg)]/80 backdrop-blur-md rounded-t-3xl rounded-b-xl flex flex-col items-center justify-between p-10 min-h-64 shadow-2xl border border-[var(--card-border)] transition hover:shadow-blue-200 hover:scale-105 duration-200">
+          <div className="relative bg-[var(--card-bg)]/90 backdrop-blur-md rounded-t-3xl rounded-b-xl flex flex-col items-center justify-between p-10 min-h-64 shadow-2xl border border-[var(--card-border)] transition hover:shadow-blue-200 hover:scale-105 duration-200">
             {/* 상단 동그라미 */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#B0B3B8] rounded-full shadow"></div>
             <h3 className="text-2xl font-extrabold text-[var(--foreground)] mb-3 mt-4">키오스크 훈련(심화)</h3>
@@ -83,7 +79,7 @@ export default function Home() {
       {/* About Section */}
       <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-20 bg-[var(--background)]">
         <h2 className="text-4xl font-extrabold mb-2 text-[var(--card-bg)] tracking-tight">R.OTi Lab</h2>
-        <div className="h-40 w-full bg-[var(--card-bg)]/80 backdrop-blur-md rounded-3xl flex items-center justify-center text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-8 text-center">
+        <div className="h-40 w-full bg-[var(--card-bg)]/90 backdrop-blur-md rounded-3xl flex items-center justify-center text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-8 text-center">
           <span className="text-xl font-semibold text-[var(--foreground)]">
             <br/>
             누구나 이용할 수 있는 교육용 웹앱과 웹게임 개발, <br/> 작업치료사 실무에 도움이 되는 AI 활용법을<br/>
@@ -95,7 +91,7 @@ export default function Home() {
       {/* Contact Section */}
       <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-12 mb-32 bg-[var(--background)]">
         <h2 className="text-4xl font-extrabold mb-2 text-[var(--card-bg)] tracking-tight">Contact</h2>
-        <div className="h-24 w-full bg-[var(--card-bg)]/80 backdrop-blur-md rounded-3xl flex flex-col items-center justify-center gap-2 text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-6">
+        <div className="h-24 w-full bg-[var(--card-bg)]/90 backdrop-blur-md rounded-3xl flex flex-col items-center justify-center gap-2 text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-6">
           <div className="flex items-center gap-3 text-lg font-semibold text-[var(--foreground)]">
             <a href="mailto:h2g0614@gmail.com" className="underline hover:text-blue-500">h2g0614@gmail.com</a>
           </div>

@@ -2,15 +2,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #2C3E50; /* 메탈 느낌의 차가운 회색 */
-  --foreground: #36454F; /* 차콜블랙 */
+  --background: #36454F; /* 메탈릭 네이비 */
+  --foreground: #232B33; /* 진한 차콜 */
   --primary: #4F8CFF;    /* 포인트 블루 */
-  --card-bg: #F5F5DC;    /* 아이보리 */
+  --card-bg: #F8F6E3;    /* 아이보리 */
   --card-border: #E8E8E8;
   --card-shadow: 0 4px 24px 0 rgba(80, 80, 80, 0.06);
   --button-bg: var(--primary);
   --button-text: #fff;
-  --text-sub: #888;
+  --text-sub: #495867;
 }
 
 body {
