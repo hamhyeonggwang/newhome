@@ -8,7 +8,10 @@ export default function Home() {
         {/* 메인 제목 뒤의 반투명 동그라미 배경 */}
         <div className="relative mb-6">
           <div className="absolute -left-12 -top-8 w-80 h-80 bg-[var(--background)] rounded-full opacity-60"></div>
-          <h1 className="font-extrabold text-6xl sm:text-10xl tracking-tight relative z-10">
+          <h1
+            className="font-extrabold text-6xl sm:text-10xl tracking-tight relative z-10 drop-shadow-[0_2px_8px_white]"
+            style={{ textShadow: "0 2px 16px #fff, 0 0px 2px #fff" }}
+          >
             <span className="text-[var(--card-bg)]">Re</span>
             <span className="text-[var(--card-bg)]">habilitation + </span>
             <span className="text-white">OT</span>
