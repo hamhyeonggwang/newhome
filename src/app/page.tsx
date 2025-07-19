@@ -67,8 +67,13 @@ export default function Home() {
             <img src="/Stroop.png" alt="Stroop Game" className="w-2/3 h-2/3 object-contain mb-2 rounded-xl shadow group-hover:shadow-lg" />
             <span className="text-[var(--foreground)] font-bold text-base mt-1">Stroop 게임</span>
           </a>
-          {/* 나머지 18개: Coming Soon */}
-          {Array.from({ length: 18 }).map((_, i) => (
+          {/* 세 번째 웹게임: Pencil */}
+          <a href="https://pencil-cyan.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-[var(--card-bg)] rounded-2xl flex flex-col items-center justify-center shadow border border-[var(--card-border)] hover:shadow-blue-200 hover:scale-105 transition group">
+            <img src="/pencil-thumb.png" alt="Pencil Game" className="w-2/3 h-2/3 object-contain mb-2 rounded-xl shadow group-hover:shadow-lg" />
+            <span className="text-[var(--foreground)] font-bold text-base mt-1">Pencil 게임</span>
+          </a>
+          {/* 나머지 17개: Coming Soon */}
+          {Array.from({ length: 17 }).map((_, i) => (
             <div key={i} className="aspect-square bg-[var(--card-bg)]/80 backdrop-blur-md rounded-2xl flex items-center justify-center shadow border border-[var(--card-border)] opacity-60 text-[#B0B3B8] font-extrabold text-lg animate-pulse">
               Coming Soon
             </div>
