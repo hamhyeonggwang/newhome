@@ -7,7 +7,7 @@ export default function About() {
           About R.OTi Lab
         </h1>
         <p className="text-xl text-[var(--text-sub)] text-center max-w-3xl leading-relaxed">
-          2018년 RTL Reader To Leader에서 시작된 작업치료사 독서모임이 발전하여<br/>
+          2018년 <span className="text-[#4F8CFF] font-bold drop-shadow-[0_0_8px_rgba(79,140,255,0.3)]">R</span>TL <span className="text-[#B3D8FF] font-bold drop-shadow-[0_0_8px_rgba(179,216,255,0.3)]">R</span>eader To <span className="text-[#4F8CFF] font-bold drop-shadow-[0_0_8px_rgba(79,140,255,0.3)]">L</span>eader에서 시작된 작업치료사 독서모임이 발전하여<br/>
           빛나는 작업치료사의 지식 실험실로 거듭났습니다.
         </p>
       </section>
