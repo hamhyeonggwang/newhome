@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { sendToKakaoChannel } from "../lib/kakao-api";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -25,24 +26,37 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
     
-    // 실제 메일 전송 로직은 여기에 구현
-    // 현재는 시뮬레이션
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        type: "collaboration"
-      });
+    try {
+      // 카카오톡 채널로 메시지 전송
+      const result = await sendToKakaoChannel(formData);
       
-      setTimeout(() => {
-        setSubmitStatus("idle");
-      }, 3000);
-    }, 1000);
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          type: "collaboration"
+        });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      
+      // 성공 메시지 3초 후 사라지게
+      if (submitStatus === "success") {
+        setTimeout(() => {
+          setSubmitStatus("idle");
+        }, 3000);
+      }
+    }
   };
 
   return (
@@ -77,18 +91,13 @@ export default function Contact() {
           
           <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)] text-center">
             <div className="text-4xl mb-4">📱</div>
-            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">인스타그램</h3>
+            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">카카오톡</h3>
             <p className="text-[var(--text-sub)] mb-4">
-              일상과 업데이트를 공유합니다.
+              메시지를 보내면 카카오톡으로 알림을 받습니다.
             </p>
-            <a 
-              href="https://instagram.com/starlight_daddy" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[#4F8CFF] hover:text-[#B3D8FF] font-medium transition-colors"
-            >
-              @starlight_daddy
-            </a>
+            <span className="text-[#4F8CFF] font-medium">
+              실시간 알림
+            </span>
           </div>
           
           <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)] text-center">
@@ -110,7 +119,7 @@ export default function Contact() {
         <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)]">
           {submitStatus === "success" && (
             <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-              메시지가 성공적으로 전송되었습니다! 빠른 시일 내에 답변드리겠습니다.
+              메시지가 성공적으로 전송되었습니다! 카카오톡으로 알림을 받으셨을 것입니다. 빠른 시일 내에 답변드리겠습니다.
             </div>
           )}
           
@@ -222,6 +231,10 @@ export default function Contact() {
         <h2 className="text-3xl font-bold text-[var(--card-bg)] mb-8 text-center">자주 묻는 질문</h2>
         <div className="space-y-4">
           {[
+            {
+              question: "메시지를 보내면 어떻게 되나요?",
+              answer: "메시지를 보내시면 카카오톡 채널로 즉시 알림이 전송되고, 빠른 시일 내에 답변드리겠습니다."
+            },
             {
               question: "어떤 종류의 협업을 찾고 계신가요?",
               answer: "작업치료 관련 웹앱 개발, 연구 프로젝트, 교육 자료 제작 등 다양한 분야에서 협업을 찾고 있습니다."
