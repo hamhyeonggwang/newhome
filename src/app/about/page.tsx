@@ -7,8 +7,69 @@ export default function About() {
           About R.OTi Lab
         </h1>
         <p className="text-xl text-[var(--text-sub)] text-center max-w-3xl leading-relaxed">
-          빛나는 작업치료사의 지식 실험실에서 혁신적인 교육 도구와 커뮤니티를 만들어갑니다.
+          2018년 RTL Reader To Leader에서 시작된 작업치료사 독서모임이 발전하여<br/>
+          빛나는 작업치료사의 지식 실험실로 거듭났습니다.
         </p>
+      </section>
+
+      {/* History Section */}
+      <section className="w-full max-w-4xl">
+        <h2 className="text-3xl font-bold text-[var(--card-bg)] mb-8 text-center">우리의 역사</h2>
+        <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)]">
+          <div className="space-y-6">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-[#4F8CFF] rounded-full flex items-center justify-center text-white font-bold">
+                2018
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[var(--foreground)] mb-2">RTL Reader To Leader 시작</h3>
+                <p className="text-[var(--text-sub)] leading-relaxed">
+                  작업치료사들이 함께 책을 읽고 지식을 공유하는 독서모임으로 시작했습니다. 
+                  전문성을 높이고 실무에 도움이 되는 내용을 중심으로 활발한 토론과 학습이 이루어졌습니다.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-[#B3D8FF] rounded-full flex items-center justify-center text-white font-bold">
+                2020
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[var(--foreground)] mb-2">온라인 커뮤니티 확장</h3>
+                <p className="text-[var(--text-sub)] leading-relaxed">
+                  코로나19 상황을 맞아 온라인으로 활동 영역을 확장했습니다. 
+                  더 많은 작업치료사들이 참여할 수 있는 디지털 플랫폼을 구축하기 시작했습니다.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-[#4F8CFF] rounded-full flex items-center justify-center text-white font-bold">
+                2023
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[var(--foreground)] mb-2">R.OTi Lab으로 발전</h3>
+                <p className="text-[var(--text-sub)] leading-relaxed">
+                  단순한 독서모임을 넘어서 작업치료사들을 위한 교육용 웹앱과 게임을 개발하기 시작했습니다. 
+                  Rehabilitation + OT + Innovation의 의미를 담아 R.OTi Lab으로 새로운 시작을 했습니다.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-[#B3D8FF] rounded-full flex items-center justify-center text-white font-bold">
+                2025
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[var(--foreground)] mb-2">빛나는 작업치료사의 지식 실험실</h3>
+                <p className="text-[var(--text-sub)] leading-relaxed">
+                  현재는 교육용 웹앱, 인지 훈련 게임, 블로그, 커뮤니티를 아우르는 
+                  종합적인 작업치료사 플랫폼으로 발전했습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Mission Section */}
@@ -16,24 +77,24 @@ export default function About() {
         <h2 className="text-3xl font-bold text-[var(--card-bg)] mb-8 text-center">미션</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)]">
-            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">교육 혁신</h3>
+            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">지식 공유</h3>
             <p className="text-[var(--text-sub)] leading-relaxed">
-              작업치료사와 학생들을 위한 혁신적인 교육용 웹앱을 개발하여 
-              실무 능력 향상에 기여합니다.
+              독서모임에서 시작된 지식 공유 문화를 이어가며, 
+              작업치료사들이 함께 성장할 수 있는 환경을 만들어갑니다.
+            </p>
+          </div>
+          <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)]">
+            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">기술 혁신</h3>
+            <p className="text-[var(--text-sub)] leading-relaxed">
+              최신 웹 기술을 활용하여 작업치료사들을 위한 
+              혁신적인 교육 도구와 플랫폼을 개발합니다.
             </p>
           </div>
           <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)]">
             <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">커뮤니티 구축</h3>
             <p className="text-[var(--text-sub)] leading-relaxed">
-              작업치료사들이 지식을 공유하고 협력할 수 있는 
+              작업치료사들이 지식을 나누고 협력할 수 있는 
               활발한 커뮤니티를 만들어갑니다.
-            </p>
-          </div>
-          <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)]">
-            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">기술 융합</h3>
-            <p className="text-[var(--text-sub)] leading-relaxed">
-              최신 기술과 작업치료를 융합하여 
-              새로운 가능성을 탐구합니다.
             </p>
           </div>
         </div>
