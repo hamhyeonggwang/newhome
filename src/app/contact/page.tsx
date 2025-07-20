@@ -90,14 +90,20 @@ export default function Contact() {
           </div>
           
           <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)] text-center">
-            <div className="text-4xl mb-4">📱</div>
-            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">카카오톡</h3>
+            <div className="text-4xl mb-4">💬</div>
+            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">카카오채널</h3>
             <p className="text-[var(--text-sub)] mb-4">
-              메시지를 보내면 카카오톡으로 알림을 받습니다.
+              카카오채널을 추가하여 실시간 소통하세요.
             </p>
-            <span className="text-[#4F8CFF] font-medium">
-              실시간 알림
-            </span>
+            <a 
+              href="http://pf.kakao.com/_pxjxlWn" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-[#FEE500] text-black font-medium rounded-lg hover:bg-[#FDD800] transition-colors"
+            >
+              <span className="mr-2">➕</span>
+              채널 추가
+            </a>
           </div>
           
           <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)] text-center">
@@ -119,7 +125,7 @@ export default function Contact() {
         <div className="bg-[var(--card-bg)]/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-[var(--card-border)]">
           {submitStatus === "success" && (
             <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-              메시지가 성공적으로 전송되었습니다! 카카오톡으로 알림을 받으셨을 것입니다. 빠른 시일 내에 답변드리겠습니다.
+              메시지가 성공적으로 전송되었습니다! 카카오채널로 알림을 받으셨을 것입니다. 빠른 시일 내에 답변드리겠습니다.
             </div>
           )}
           
@@ -233,7 +239,7 @@ export default function Contact() {
           {[
             {
               question: "메시지를 보내면 어떻게 되나요?",
-              answer: "메시지를 보내시면 카카오톡 채널로 즉시 알림이 전송되고, 빠른 시일 내에 답변드리겠습니다."
+              answer: "메시지를 보내시면 카카오채널로 즉시 알림이 전송되고, 빠른 시일 내에 답변드리겠습니다."
             },
             {
               question: "어떤 종류의 협업을 찾고 계신가요?",
