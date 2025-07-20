@@ -6,13 +6,17 @@ export async function POST(request: NextRequest) {
     
     // 실제 카카오톡 채널 API 호출
     // 환경 변수에서 API 키를 가져옵니다
-    const KAKAO_CHANNEL_ID = process.env.KAKAO_CHANNEL_ID;
+    const KAKAO_CHANNEL_ID = process.env.KAKAO_CHANNEL_ID || '_pxjxlWn'; // 기본값 설정
     const KAKAO_ACCESS_TOKEN = process.env.KAKAO_ACCESS_TOKEN;
     
-    if (!KAKAO_CHANNEL_ID || !KAKAO_ACCESS_TOKEN) {
+    if (!KAKAO_ACCESS_TOKEN) {
       console.log('Kakao API credentials not configured');
       // 개발 환경에서는 성공으로 처리
-      return NextResponse.json({ success: true, message: 'Development mode - message logged' });
+      return NextResponse.json({ 
+        success: true, 
+        message: 'Development mode - message logged',
+        channelId: KAKAO_CHANNEL_ID 
+      });
     }
     
     // 카카오톡 채널 API 호출
@@ -25,7 +29,7 @@ export async function POST(request: NextRequest) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          template_id: 'contact_form_message', // 템플릿 ID
+          template_id: 'contact_form_message', // 실제 템플릿 ID로 변경 필요
           template_args: {
             name: formData.name,
             email: formData.email,
@@ -38,10 +42,15 @@ export async function POST(request: NextRequest) {
     );
     
     if (!kakaoResponse.ok) {
-      throw new Error(`Kakao API error: ${kakaoResponse.status}`);
+      const errorData = await kakaoResponse.text();
+      console.error('Kakao API error:', errorData);
+      throw new Error(`Kakao API error: ${kakaoResponse.status} - ${errorData}`);
     }
     
-    return NextResponse.json({ success: true });
+    const result = await kakaoResponse.json();
+    console.log('Kakao API success:', result);
+    
+    return NextResponse.json({ success: true, data: result });
     
   } catch (error) {
     console.error('Error in send-kakao API:', error);
