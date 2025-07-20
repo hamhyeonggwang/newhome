@@ -81,31 +81,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-20 bg-[var(--background)]">
-        <h2 className="text-4xl font-extrabold mb-2 text-[var(--card-bg)] tracking-tight">R.OTi Lab</h2>
-        <div className="h-40 w-full bg-[var(--card-bg)]/90 backdrop-blur-md rounded-3xl flex items-center justify-center text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-8 text-center">
-          <span className="text-xl font-semibold text-[var(--foreground)]">
-            <br/>
-            누구나 이용할 수 있는 교육용 웹앱과 웹게임 개발, <br/> 작업치료사 실무에 도움이 되는 AI 활용법을<br/>
-            함께 연구하고 자유롭게 나누는 커뮤니티를 지향합니다.
-          </span>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="w-full max-w-4xl flex flex-col items-center gap-6 mt-12 mb-32 bg-[var(--background)]">
-        <h2 className="text-4xl font-extrabold mb-2 text-[var(--card-bg)] tracking-tight">Contact</h2>
-        <div className="h-24 w-full bg-[var(--card-bg)]/90 backdrop-blur-md rounded-3xl flex flex-col items-center justify-center gap-2 text-2xl font-bold text-[var(--text-sub)] border border-[var(--card-border)] shadow-xl p-6">
-          <div className="flex items-center gap-3 text-lg font-semibold text-[var(--foreground)]">
-            <a href="mailto:h2g0614@gmail.com" className="underline hover:text-blue-500">h2g0614@gmail.com</a>
-          </div>
-          <div className="flex items-center gap-3 text-lg font-semibold text-[var(--foreground)]">
-            <a href="https://instagram.com/starlight_daddy" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">@starlight_daddy</a>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="w-full py-6 text-center text-sm text-[#888] bg-transparent select-none">
         © 2025 R.OTi Lab . All rights reserved.  대표 함형광
