@@ -4,7 +4,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="w-full flex flex-col items-center justify-center py-20 px-6 bg-[var(--card-bg)] rounded-3xl shadow-xl">
         <h1 className="text-4xl sm:text-6xl font-extrabold text-[var(--foreground)] mb-6 tracking-tight text-center">
-          About <span className="text-[#4F8CFF] font-bold drop-shadow-[0_0_8px_rgba(79,140,255,0.3)]">R</span>.<span className="text-[#4F8CFF] font-bold drop-shadow-[0_0_8px_rgba(79,140,255,0.3)]">OT</span>i <span className="text-[#4F8CFF] font-bold drop-shadow-[0_0_8px_rgba(79,140,255,0.3)]">L</span>ab
+          About <span className="text-[#4F8CFF] font-bold drop-shadow-[0_0_8px_rgba(79,140,255,0.3)]">R</span>.<span className="text-[#222] font-bold drop-shadow-[0_0_8px_rgba(34,34,34,0.2)]">O</span><span className="text-[#4F8CFF] font-bold drop-shadow-[0_0_8px_rgba(79,140,255,0.3)]">T</span>i <span className="text-[#4F8CFF] font-bold drop-shadow-[0_0_8px_rgba(79,140,255,0.3)]">L</span>ab
         </h1>
       </section>
 

@@ -212,8 +212,8 @@ export default function Blog() {
         <h2 className="text-3xl font-bold text-[var(--card-bg)] mb-8 text-center">최신 게시글</h2>
         {blogPosts.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-[var(--text-sub)] text-lg">아직 작성된 게시글이 없습니다.</p>
-            <p className="text-[var(--text-sub)] mt-2">첫 번째 게시글을 작성해보세요!</p>
+            <p className="text-[#4F8CFF] font-semibold text-lg">아직 작성된 게시글이 없습니다.</p>
+            <p className="text-[#4F8CFF] font-semibold mt-2">첫 번째 게시글을 작성해보세요!</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

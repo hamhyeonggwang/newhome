@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.13/html-to-image.min.js" integrity="sha512-iZ2ORl595Wx6miw+GuadDet4WQbdSWS3JLMoNfY8cRGoEFy6oT3G9IbcrBeL6AfkgpA51ETt/faX6yLV+/gFJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      (function() {
+        const originalConsole = window.console;
+        window.console = {
+          log: (...args) => {
+            originalConsole.log(...args);
+            window.parent.postMessage({ type: 'console', message: args.join(' ') }, '*');
+          },
+          error: (...args) => {
+            originalConsole.error(...args);
+            window.parent.postMessage({ type: 'console', message: 'Error: ' + args.join(' ') }, '*');
+          },
+          warn: (...args) => {
+            originalConsole.warn(...args);
+            window.parent.postMessage({ type: 'console', message: 'Warning: ' + args.join(' ') }, '*');
+          }
+        };
+
+        let requestId = 0;
+        let callbacksMap = new Map();
+        window.claude = {
+          complete: (prompt) => {
+            return new Promise((resolve, reject) => {
+              const id = requestId++;
+              callbacksMap.set(id, { resolve, reject });
+              window.parent.postMessage({ type: 'claudeComplete', id, prompt }, '*');
+            });
+          }
+        };
+
+        // Override global fetch
+        window.fetch = (url, init = {}) => {
+          return new Promise((resolve, reject) => {
+            const id = requestId++;
+            callbacksMap.set(id, { resolve, reject });
+            window.parent.postMessage({
+              type: 'proxyFetch',
+              id,
+              url,
+              init,
+            }, '*');
+          });
+        };
+
+        window.addEventListener('message', async (event) => {
+          if (event.data.type === 'takeScreenshot') {
+            const rootElement = document.getElementById('artifacts-component-root-html');
+            if (!rootElement) {
+              window.parent.postMessage({
+                type: 'screenshotError',
+                error: new Error('Root element not found'),
+              }, '*');
+            }
+            const screenshot = await htmlToImage.toPng(rootElement, {
+              imagePlaceholder:
+                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePDgwX8ACOQDoNsk0PMAAAAASUVORK5CYII=",
+            });
+            window.parent.postMessage({
+              type: 'screenshotData',
+              data: screenshot,
+            }, '*');
+          } else if (event.data.type === 'claudeComplete') {
+            const callback = callbacksMap.get(event.data.id);
+            if (event.data.error) {
+              callback.reject(new Error(event.data.error));
+            } else {
+              callback.resolve(event.data.completion);
+            }
+            callbacksMap.delete(event.data.id);
+          } else if (event.data.type === 'proxyFetchResponse') {
+            const callback = callbacksMap.get(event.data.id);
+            if (event.data.error) {
+              callback.reject(new Error(event.data.error));
+            } else {
+              callback.resolve(new Response(event.data.body, {
+                status: event.data.status,
+                statusText: event.data.statusText,
+                headers: event.data.headers
+              }));
+            }
+            callbacksMap.delete(event.data.id);
+          }
+        });
+
+        window.addEventListener('click', (event) => {
+          const isEl = event.target instanceof HTMLElement;
+          if (!isEl) return;
+    
+          // find ancestor links
+          const linkEl = event.target.closest("a");
+          if (!linkEl || !linkEl.href) return;
+    
+          event.preventDefault();
+          event.stopImmediatePropagation();
+    
+          let linkUrl;
+          try {
+            linkUrl = new URL(linkEl.href);
+          } catch (error) {
+            return;
+          }
+    
+          if (linkUrl.hostname === window.location.hostname) return;
+    
+          window.parent.postMessage({
+            type: 'openExternal',
+            href: linkEl.href,
+          }, '*');
+      });
+
+        const originalOpen = window.open;
+        window.open = function (url) {
+          window.parent.postMessage({
+            type: "openExternal",
+            href: url,
+          }, "*");
+        };
+
+        window.addEventListener('error', (event) => {
+          window.parent.postMessage({ type: 'console', message: 'Uncaught Error: ' + event.message }, '*');
+        });
+      })();
+    </script>
+  
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기억력 훈련 게임 썸네일</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .thumbnail {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 30px;
+            z-index: 2;
+        }
+
+        .brain-icon {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .title {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .game-preview {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin: 20px 0;
+            z-index: 2;
+        }
+
+        .mini-card {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(45deg, #ffecd2, #fcb69f);
+            border: 2px solid white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .mini-card:nth-child(1) { animation-delay: 0s; }
+        .mini-card:nth-child(2) { animation-delay: 0.2s; }
+        .mini-card:nth-child(3) { animation-delay: 0.4s; }
+        .mini-card:nth-child(4) { animation-delay: 0.6s; }
+        .mini-card:nth-child(5) { animation-delay: 0.8s; }
+        .mini-card:nth-child(6) { animation-delay: 1s; }
+        .mini-card:nth-child(7) { animation-delay: 1.2s; }
+        .mini-card:nth-child(8) { animation-delay: 1.4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+            z-index: 2;
+        }
+
+        .feature {
+            color: white;
+            font-size: 0.9rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .pattern-card {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 4px;
+            animation: backgroundFloat 4s ease-in-out infinite;
+        }
+
+        .pattern-card:nth-child(1) { top: 20px; left: 30px; animation-delay: 0s; }
+        .pattern-card:nth-child(2) { top: 60px; right: 40px; animation-delay: 1s; }
+        .pattern-card:nth-child(3) { bottom: 80px; left: 20px; animation-delay: 2s; }
+        .pattern-card:nth-child(4) { bottom: 30px; right: 20px; animation-delay: 3s; }
+        .pattern-card:nth-child(5) { top: 120px; left: 50%; animation-delay: 0.5s; }
+
+        @keyframes backgroundFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(5deg); }
+        }
+
+        .download-info {
+            margin-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8rem;
+        }
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script></head>
+<body id="artifacts-component-root-html">
+    <div class="thumbnail">
+        <!-- 배경 패턴 -->
+        <div class="background-pattern">
+            <div class="pattern-card"></div>
+            <div class="pattern-card"></div>
+            <div class="pattern-card"></div>
+            <div class="pattern-card"></div>
+            <div class="pattern-card"></div>
+        </div>
+
+        <!-- 헤더 -->
+        <div class="header-section">
+            <div class="brain-icon">🧠</div>
+            <div class="title">기억력 훈련</div>
+            <div class="subtitle">발달장애 아동을 위한</div>
+        </div>
+
+        <!-- 게임 미리보기 -->
+        <div class="game-preview">
+            <div class="mini-card">🐶</div>
+            <div class="mini-card">🐱</div>
+            <div class="mini-card">🐰</div>
+            <div class="mini-card">🐼</div>
+            <div class="mini-card">🐸</div>
+            <div class="mini-card">🐝</div>
+            <div class="mini-card">🦋</div>
+            <div class="mini-card">🐠</div>
+        </div>
+
+        <!-- 특징 -->
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🎯</span>
+                혼자하기
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🤖</span>
+                AI 대결
+            </div>
+            <div class="feature">
+                <span class="feature-icon">👫</span>
+                친구 대결
+            </div>
+        </div>
+
+        <div class="download-info">
+            9단계 난이도 • 반응형 웹게임
+        </div>
+    </div>
+
+    <!-- 다운로드용 버튼들 -->
+    <div style="position: fixed; top: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <button onclick="downloadThumbnail()" style="
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        ">📸 PNG 다운로드</button>
+        
+        <button onclick="downloadSVG()" style="
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        ">📁 SVG 다운로드</button>
+    </div>
+
+    <script>
+        // PNG 다운로드 함수
+        function downloadThumbnail() {
+            const thumbnail = document.querySelector('.thumbnail');
+            
+            // html2canvas 라이브러리가 없으므로 canvas를 직접 사용
+            html2canvas(thumbnail, {
+                width: 400,
+                height: 400,
+                scale: 2, // 고해상도
+                backgroundColor: null
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'memory-game-thumbnail.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+
+        // SVG 다운로드 함수 (간단한 버전)
+        function downloadSVG() {
+            alert('SVG 다운로드 기능은 별도 라이브러리가 필요합니다. PNG 다운로드를 이용해주세요!');
+        }
+
+        // html2canvas 라이브러리 동적 로드
+        function loadHtml2Canvas() {
+            if (window.html2canvas) return;
+            
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+            document.head.appendChild(script);
+        }
+
+        // 페이지 로드 시 라이브러리 로드
+        window.addEventListener('load', loadHtml2Canvas);
+
+        // 간단한 스크린샷 기능 (html2canvas 없이)
+        function downloadThumbnail() {
+            // 브라우저의 스크린샷 기능 안내
+            alert('썸네일을 다운로드하려면:\n1. 브라우저에서 F12를 눌러 개발자 도구 열기\n2. 썸네일 영역을 우클릭 → "스크린샷 촬영" 선택\n또는 화면 캡처 도구를 사용해주세요!');
+        }
+    </script>
+
+</body></html>
