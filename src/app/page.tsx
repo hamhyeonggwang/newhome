@@ -43,12 +43,13 @@ export default function Home() {
             <p className="text-lg text-[var(--text-sub)] mb-6 text-center leading-relaxed">다양한 상황별 키오스크 주문/결제 심화 훈련 웹앱</p>
             <a href="https://cafe-two-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto px-6 py-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500 text-white font-bold shadow hover:opacity-90 hover:shadow-blue-200 transition text-lg">바로가기</a>
           </div>
-          {/* 새 교육용 앱(Coming Soon) */}
-          <div className="relative bg-white/70 backdrop-blur-md rounded-t-3xl rounded-b-xl flex flex-col items-center justify-between p-10 min-h-64 shadow-2xl border border-[var(--card-border)] opacity-60 transition hover:shadow-blue-200 hover:scale-105 duration-200">
+          {/* 영양분석 앱 */}
+          <div className="relative bg-white/80 backdrop-blur-md rounded-t-3xl rounded-b-xl flex flex-col items-center justify-between p-10 min-h-64 shadow-2xl border border-[var(--card-border)] transition hover:shadow-blue-200 hover:scale-105 duration-200">
             {/* 상단 동그라미 */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#B0B3B8] rounded-full shadow"></div>
-            <h3 className="text-2xl font-extrabold text-[#B0B3B8] mb-3 mt-4 animate-pulse">새 교육용 앱</h3>
-            <button disabled className="mt-auto px-6 py-3 rounded-full bg-gray-200 text-gray-500 font-bold cursor-not-allowed text-lg">Coming Soon</button>
+            <h3 className="text-2xl font-extrabold text-[#232323] mb-3 mt-4">영양분석 앱</h3>
+            <p className="text-lg text-[var(--text-sub)] mb-6 text-center leading-relaxed">식품의 영양성분을 분석하고 건강한 식습관을 도와주는 교육용 웹앱</p>
+            <a href="https://nutrition-analysis-app.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto px-6 py-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500 text-white font-bold shadow hover:opacity-90 hover:shadow-blue-200 transition text-lg">바로가기</a>
           </div>
         </div>
       </section>
