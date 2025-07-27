@@ -49,7 +49,7 @@ export default function Home() {
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#B0B3B8] rounded-full shadow"></div>
             <h3 className="text-2xl font-extrabold text-[var(--foreground)] mb-3 mt-4">영양분석 앱</h3>
             <p className="text-lg text-[var(--text-sub)] mb-6 text-center leading-relaxed">식품의 영양성분을 분석하고 건강한 식습관을 도와주는 교육용 웹앱</p>
-            <a href="https://nutrition-analysis-app.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto px-6 py-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500 text-white font-bold shadow hover:opacity-90 hover:shadow-blue-200 transition text-lg">바로가기</a>
+            <a href="https://diet-mauve.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-auto px-6 py-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500 text-white font-bold shadow hover:opacity-90 hover:shadow-blue-200 transition text-lg">바로가기</a>
           </div>
         </div>
       </section>
