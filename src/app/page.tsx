@@ -78,8 +78,15 @@ export default function Home() {
             <img src="/pencil.png" alt="Pencil Game" className="w-2/3 h-2/3 object-cover rounded-xl shadow group-hover:shadow-lg" />
             <span className="text-[var(--foreground)] font-bold text-base mt-1">Pencil 게임</span>
           </a>
-          {/* 나머지 17개: Coming Soon */}
-          {Array.from({ length: 17 }).map((_, i) => (
+          {/* 다섯 번째 웹게임: Block Breaker */}
+          <a href="https://blockbreaker-72idejkhs-starlight-papas-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-[var(--card-bg)] rounded-2xl flex flex-col items-center justify-center shadow border border-[var(--card-border)] hover:shadow-blue-200 hover:scale-105 transition group">
+            <div className="w-2/3 h-2/3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow group-hover:shadow-lg flex items-center justify-center">
+              <div className="text-white font-bold text-2xl">🎮</div>
+            </div>
+            <span className="text-[var(--foreground)] font-bold text-base mt-1">Block Breaker</span>
+          </a>
+          {/* 나머지 16개: Coming Soon */}
+          {Array.from({ length: 16 }).map((_, i) => (
             <div key={i} className="aspect-square bg-[var(--card-bg)]/80 backdrop-blur-md rounded-2xl flex items-center justify-center shadow border border-[var(--card-border)] opacity-60 text-[#B0B3B8] font-extrabold text-lg animate-pulse">
               Coming Soon
             </div>
