@@ -79,7 +79,7 @@ export default function Home() {
             <span className="text-[var(--foreground)] font-bold text-base mt-1">Pencil 게임</span>
           </a>
           {/* 다섯 번째 웹게임: Block Breaker */}
-          <a href="https://blockbreaker-72idejkhs-starlight-papas-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-[var(--card-bg)] rounded-2xl flex flex-col items-center justify-center shadow border border-[var(--card-border)] hover:shadow-blue-200 hover:scale-105 transition group">
+          <a href="https://blockbreaker-lake.vercel.app/" target="_blank" rel="noopener noreferrer" className="aspect-square bg-[var(--card-bg)] rounded-2xl flex flex-col items-center justify-center shadow border border-[var(--card-border)] hover:shadow-blue-200 hover:scale-105 transition group">
             <div className="w-2/3 h-2/3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow group-hover:shadow-lg flex items-center justify-center">
               <div className="text-white font-bold text-2xl">🎮</div>
             </div>
